@@ -21,6 +21,9 @@ public class GamePanel extends JPanel implements ActionListener{
 	Timer timer;
 	Random random;
 	
+	/**
+	 * This defines the color of the screen and finalizes the size of the screen
+	*/
 	GamePanel(){
 		random = new Random();
 		this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
@@ -35,10 +38,16 @@ public class GamePanel extends JPanel implements ActionListener{
 		timer = new Timer(DELAY,this);
 		timer.start();
 	}
+	/**
+	 * Gets the graphics ready
+	*/
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		draw(g);
 	}
+	/**
+	 * Draws all of the components like the apple and snake
+	*/
 	public void draw(Graphics g) {
 		
 		if(running) {
